@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import logo from "../assets/logo2.png"; // Adjust
-import Honey from "../assets/Honey-1.png";
+
+import Honey from "../assets/honey-1.png";
 import dharmendra from "../assets/dharmendra.png";
 import devesh from "../assets/devesh-photo.png";
 import prabhat from "../assets/prabhat1.png";
