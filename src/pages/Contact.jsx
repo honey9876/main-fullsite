@@ -312,7 +312,6 @@
 
 
 
-
 import React, { useEffect, useRef } from "react";
 import ContactForm from "../components/ContactForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -432,7 +431,7 @@ export default function Contact() {
         duration: isMobile ? 0.4 : 0.5,
         scrollTrigger: {
           trigger: socialIconsRef.current,
-          start: "top 95%",
+          start: "top 90%",
           end: isMobile ? "top 60%" : "top 40%",
           scrub: isMobile ? false : 0.5,
           toggleActions: "play none none reverse",
@@ -455,18 +454,20 @@ export default function Contact() {
         {`
           .contact-info-card {
             overflow: visible !important; /* Ensure parent card doesn't clip icons */
+            width: 100%; /* Ensure parent takes full width */
           }
           .social-icons-container {
             position: relative;
-            z-index: 100; /* Increased z-index to ensure visibility above nav bar */
+            z-index: 100; /* Ensure visibility above nav bar */
             display: flex;
             flex-wrap: nowrap; /* Prevent wrapping to ensure all icons are in one row */
             overflow-x: auto; /* Allow horizontal scrolling if needed */
             white-space: nowrap; /* Keep icons in a single line */
-            min-width: 300px; /* Ensure enough width for all icons */
+            min-width: calc(6 * (1.5rem + 0.5rem + 0.5rem)); /* 6 icons * (icon size + padding + margin) */
             gap: 0.5rem; /* Reduced gap for better fit on mobile */
             padding: 0.5rem; /* Adjusted padding */
             scrollbar-width: none; /* Hide scrollbar for Firefox */
+            border: 1px solid red; /* Debugging border to check rendered width */
           }
           .social-icons-container::-webkit-scrollbar {
             display: none; /* Hide scrollbar for Webkit browsers */
@@ -475,19 +476,19 @@ export default function Contact() {
             .social-icons-container {
               flex-wrap: nowrap; /* Ensure no wrapping on mobile */
               overflow-x: auto; /* Allow scrolling if icons overflow */
-              min-width: 300px; /* Ensure space for all icons */
+              min-width: calc(6 * (1.5rem + 0.5rem + 0.5rem)); /* Ensure space for all 6 icons */
             }
             .social-icons-container a {
               display: inline-block !important; /* Force display */
               visibility: visible !important; /* Force visibility */
               flex-shrink: 0; /* Prevent icons from shrinking */
               margin-right: 0.5rem; /* Consistent spacing */
-              font-size: 0.9rem !important; /* Smaller icons on mobile */
-              padding: 0.25rem !important; /* Reduced padding */
+              font-size: 0.8rem !important; /* Even smaller icons on mobile */
+              padding: 0.2rem !important; /* Reduced padding */
             }
             .social-icons-container a svg {
-              width: 1.5rem !important; /* Adjust icon size */
-              height: 1.5rem !important;
+              width: 1.2rem !important; /* Smaller icon size */
+              height: 1.2rem !important;
             }
           }
           @media (min-width: 769px) {
@@ -497,6 +498,7 @@ export default function Contact() {
               min-width: auto; /* Reset min-width on desktop */
               gap: 1.5rem; /* Original gap for larger screens */
               padding: 0.75rem; /* Original padding for larger screens */
+              border: none; /* Remove debugging border on desktop */
             }
             .social-icons-container a {
               font-size: 1.25rem !important; /* Original size on desktop */
