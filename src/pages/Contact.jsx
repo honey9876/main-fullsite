@@ -432,7 +432,7 @@ export default function Contact() {
         duration: isMobile ? 0.4 : 0.5,
         scrollTrigger: {
           trigger: socialIconsRef.current,
-          start: "top 90%",
+          start: "top 95%",
           end: isMobile ? "top 60%" : "top 40%",
           scrub: isMobile ? false : 0.5,
           toggleActions: "play none none reverse",
