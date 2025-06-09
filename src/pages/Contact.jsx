@@ -313,9 +313,6 @@
 
 
 
-
-
-
 import React, { useEffect, useRef } from "react";
 import ContactForm from "../components/ContactForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -456,13 +453,17 @@ export default function Contact() {
     >
       <style>
         {`
+          .contact-info-card {
+            overflow: visible !important; /* Ensure parent card doesn't clip icons */
+          }
           .social-icons-container {
             position: relative;
-            z-index: 50; /* Increased z-index to ensure visibility above nav bar */
+            z-index: 100; /* Increased z-index to ensure visibility above nav bar */
             display: flex;
             flex-wrap: nowrap; /* Prevent wrapping to ensure all icons are in one row */
             overflow-x: auto; /* Allow horizontal scrolling if needed */
             white-space: nowrap; /* Keep icons in a single line */
+            min-width: 300px; /* Ensure enough width for all icons */
             gap: 0.5rem; /* Reduced gap for better fit on mobile */
             padding: 0.5rem; /* Adjusted padding */
             scrollbar-width: none; /* Hide scrollbar for Firefox */
@@ -474,20 +475,36 @@ export default function Contact() {
             .social-icons-container {
               flex-wrap: nowrap; /* Ensure no wrapping on mobile */
               overflow-x: auto; /* Allow scrolling if icons overflow */
+              min-width: 300px; /* Ensure space for all icons */
             }
             .social-icons-container a {
               display: inline-block !important; /* Force display */
               visibility: visible !important; /* Force visibility */
               flex-shrink: 0; /* Prevent icons from shrinking */
               margin-right: 0.5rem; /* Consistent spacing */
+              font-size: 0.9rem !important; /* Smaller icons on mobile */
+              padding: 0.25rem !important; /* Reduced padding */
+            }
+            .social-icons-container a svg {
+              width: 1.5rem !important; /* Adjust icon size */
+              height: 1.5rem !important;
             }
           }
           @media (min-width: 769px) {
             .social-icons-container {
               flex-wrap: wrap; /* Allow wrapping on larger screens */
               overflow-x: hidden; /* No scrolling needed on desktop */
+              min-width: auto; /* Reset min-width on desktop */
               gap: 1.5rem; /* Original gap for larger screens */
               padding: 0.75rem; /* Original padding for larger screens */
+            }
+            .social-icons-container a {
+              font-size: 1.25rem !important; /* Original size on desktop */
+              padding: 0.5rem !important; /* Original padding */
+            }
+            .social-icons-container a svg {
+              width: 2rem !important; /* Original icon size */
+              height: 2rem !important;
             }
           }
         `}
@@ -508,7 +525,7 @@ export default function Contact() {
 
           {/* Contact Info */}
           <div ref={contactInfoRef} className="flex flex-col w-full">
-            <div className="bg-[#f6ede8] p-3 xs:p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg mb-3 xs:mb-4 sm:mb-6 lg:mb-8 border border-[#e0d7d2]">
+            <div className="contact-info-card bg-[#f6ede8] p-3 xs:p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg mb-3 xs:mb-4 sm:mb-6 lg:mb-8 border border-[#e0d7d2]">
               <h3 className="text-base xs:text-lg sm:text-xl font-aquire-bold mb-3 xs:mb-4 sm:mb-6 text-[#4a3728] relative inline-block">
                 Contact Information
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#4a3728] opacity-30"></span>
@@ -520,8 +537,7 @@ export default function Contact() {
                     <FontAwesomeIcon icon={faEnvelope} />
                   </div>
                   <div>
-                    <h4 className="
-font-medium text-[#4a3728] text-xs xs:text-sm sm:text-base">
+                    <h4 className="font-medium text-[#4a3728] text-xs xs:text-sm sm:text-base">
                       Email
                     </h4>
                     <p className="text-[#0D2B14] text-xs xs:text-sm sm:text-base">
