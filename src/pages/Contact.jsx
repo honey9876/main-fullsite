@@ -316,8 +316,6 @@
 
 
 
-
-
 import React, { useEffect, useRef } from "react";
 import ContactForm from "../components/ContactForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -437,7 +435,7 @@ export default function Contact() {
         duration: isMobile ? 0.4 : 0.5,
         scrollTrigger: {
           trigger: socialIconsRef.current,
-          start: "top 95%",
+          start: "top 90%",
           end: isMobile ? "top 60%" : "top 40%",
           scrub: isMobile ? false : 0.5,
           toggleActions: "play none none reverse",
@@ -460,12 +458,36 @@ export default function Contact() {
         {`
           .social-icons-container {
             position: relative;
-            z-index: 10;
+            z-index: 50; /* Increased z-index to ensure visibility above nav bar */
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping to ensure all icons are in one row */
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+            white-space: nowrap; /* Keep icons in a single line */
+            gap: 0.5rem; /* Reduced gap for better fit on mobile */
+            padding: 0.5rem; /* Adjusted padding */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+          }
+          .social-icons-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
           }
           @media (max-width: 768px) {
+            .social-icons-container {
+              flex-wrap: nowrap; /* Ensure no wrapping on mobile */
+              overflow-x: auto; /* Allow scrolling if icons overflow */
+            }
             .social-icons-container a {
-              display: inline-block !important;
-              visibility: visible !important;
+              display: inline-block !important; /* Force display */
+              visibility: visible !important; /* Force visibility */
+              flex-shrink: 0; /* Prevent icons from shrinking */
+              margin-right: 0.5rem; /* Consistent spacing */
+            }
+          }
+          @media (min-width: 769px) {
+            .social-icons-container {
+              flex-wrap: wrap; /* Allow wrapping on larger screens */
+              overflow-x: hidden; /* No scrolling needed on desktop */
+              gap: 1.5rem; /* Original gap for larger screens */
+              padding: 0.75rem; /* Original padding for larger screens */
             }
           }
         `}
@@ -498,7 +520,8 @@ export default function Contact() {
                     <FontAwesomeIcon icon={faEnvelope} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-[#4a3728] text-xs xs:text-sm sm:text-base">
+                    <h4 className="
+font-medium text-[#4a3728] text-xs xs:text-sm sm:text-base">
                       Email
                     </h4>
                     <p className="text-[#0D2B14] text-xs xs:text-sm sm:text-base">
@@ -536,7 +559,7 @@ export default function Contact() {
                 </h4>
                 <div
                   ref={socialIconsRef}
-                  className="social-icons-container flex flex-wrap gap-2 xs:gap-3 sm:gap-6 bg-gradient-to-r from-[#f6ede8] to-[#e0d7d2] p-2 xs:p-3 rounded-lg"
+                  className="social-icons-container bg-gradient-to-r from-[#f6ede8] to-[#e0d7d2] rounded-lg"
                 >
                   <a
                     href="https://www.linkedin.com/company/throne8/"
