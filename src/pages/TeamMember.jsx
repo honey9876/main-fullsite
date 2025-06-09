@@ -41,7 +41,7 @@ export default function Team() {
     },
     {
       name: "Devesh Sharma",
-      role: "Co-Founder ",
+      role: "Founder ",
       imageUrl: devesh,
     },
     {
