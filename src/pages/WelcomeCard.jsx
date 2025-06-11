@@ -230,7 +230,7 @@ const WelcomeCard = () => {
             className="bg-[#a8744f] hover:bg-[#905f3b] text-white py-2 px-6 rounded-full text-sm sm:text-base font-aquire-bold"
             aria-label="Get started with bold ideas"
           >
-            LET'S GET STARTED
+            A New Era is Loading...
           </button>
         </div>
       </div>
