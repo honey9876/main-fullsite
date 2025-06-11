@@ -168,7 +168,7 @@ export default function Contact() {
                       Email
                     </h4>
                     <p className="text-[#0D2B14] text-xs xs:text-sm sm:text-base">
-                      offical@throne8.com
+                      official@throne8.com
                     </p>
                   </div>
                 </div>
