@@ -2,18 +2,18 @@ import React from "react";
 import { Card } from "../components/Card";
 import WelcomeCard from "./WelcomeCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faRobot,
-  faComments,
-  faShieldAlt,
-  faBriefcase,
-  faLaptopCode,
-  faUsersCog,
-  faChartBar,
-  faGlobe,
-  faRocket,
-  faUserCheck,
-} from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faRobot,
+//   faComments,
+//   faShieldAlt,
+//   faBriefcase,
+//   faLaptopCode,
+//   faUsersCog,
+//   faChartBar,
+//   faGlobe,
+//   faRocket,
+//   faUserCheck,
+// } from "@fortawesome/free-solid-svg-icons";
 import Service from "./Service";
 import Team from "./TeamMember";
 
