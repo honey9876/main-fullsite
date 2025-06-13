@@ -736,9 +736,9 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleApplyClick = () => {
-    window.open("https://forms.gle/iVyaH98uYpEUVCuT6", "_blank");
-  };
+  // const handleApplyClick = () => {
+  //   window.open("https://forms.gle/iVyaH98uYpEUVCuT6", "_blank");
+  // };
 
   return (
     <div
@@ -748,7 +748,7 @@ const HomePage = () => {
         background: "linear-gradient(135deg, #e0d8cf 0%, #f6ede8 100%)",
       }}
     >
-      <div
+      {/* <div
         ref={popupRef}
         className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-lg shadow-xl p-2 sm:p-2.5 md:p-3 w-11/12 max-w-[140px] sm:max-w-[200px] md:max-w-[240px] z-30 border border-[#a8744f] mt-20"
       >
@@ -764,7 +764,60 @@ const HomePage = () => {
         >
           Apply
         </button>
-      </div>
+      </div> */}
+      <div
+
+  ref={popupRef}
+
+  className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-lg shadow-xl p-2 sm:p-2.5 md:p-3 w-11/12 max-w-[140px] sm:max-w-[200px] md:max-w-[240px] z-30 border border-[#a8744f] mt-20"
+
+>
+
+  <h2 className="text-xs sm:text-sm md:text-base font-bold text-[#4a3728] mb-0.5 sm:mb-1">
+
+    Campus Ambassador
+
+  </h2>
+
+  <p className="text-[9px] sm:text-[10px] md:text-xs text-[#4a3728] mb-0.5 sm:mb-1 md:mb-2">
+
+    Join us! Be a Campus Ambassador for Throne8.
+
+  </p>
+
+  <a
+
+    href="https://forms.gle/iVyaH98uYpEUVCuT6" // 👈 yahan apna real form link daal
+
+    target="_blank"
+
+    rel="noopener noreferrer"
+
+    onClick={() => {
+
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+
+        window.gtag("event", "click", {
+
+          event_category: "Form",
+
+          event_label: "Popup - Campus Ambassador Apply",
+
+        });
+
+      }
+
+    }}
+
+    className="bg-[#a8744f] hover:bg-[#905f3b] text-white text-[9px] sm:text-[10px] md:text-xs px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 rounded-full shadow-md transition-all duration-300 w-full text-center block"
+
+  >
+
+    Apply
+
+  </a>
+
+</div>
 
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center w-full gap-4 sm:gap-6 lg:gap-12 mt-16 sm:mt-20 md:mt-24">
         <div className="text-center lg:text-left w-full max-w-full sm:max-w-md lg:max-w-xl space-y-3 sm:space-y-4 z-10 px-2 sm:px-0">
