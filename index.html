@@ -1,12 +1,28 @@
- 
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Throne8</title>
+
+    <!-- ✅ SEO Meta Tags -->
+    <meta name="author" content="Hemendra Gour, Founder & CEO of Throne8" />
+    <meta name="description" content="Throne8 is founded by Hemendra Gour to revolutionize professional networking in India." />
+
+    <!-- ✅ Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Throne8",
+      "url": "https://throne8.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Hemendra Gour"
+      }
+    }
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo.png" />
     <!-- Font Awesome CSS -->
@@ -15,20 +31,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Locomotive Scroll CSS -->
     <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FG1XMCBXX5');
-    </script>
   </head>
   <body>
     <div id="root"></div>
     <!-- Locomotive Scroll JS -->
     <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+  </body>
 </html>
-
-
