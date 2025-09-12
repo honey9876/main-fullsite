@@ -775,19 +775,19 @@ const HomePage = () => {
 
   <h2 className="text-xs sm:text-sm md:text-base font-bold text-[#4a3728] mb-0.5 sm:mb-1">
 
-    Campus Ambassador
+   Internship Apply
 
   </h2>
 
   <p className="text-[9px] sm:text-[10px] md:text-xs text-[#4a3728] mb-0.5 sm:mb-1 md:mb-2">
 
-    Join us! Be a Campus Ambassador for Throne8.
+    Join us! Apply now for the Throne8 Internship Program.
 
   </p>
 
   <a
 
-    href="https://forms.gle/iVyaH98uYpEUVCuT6" // 👈 yahan apna real form link daal
+    href="https://forms.gle/fZWTorAekDSRp1dQ7" // 👈 yahan apna real form link daal
 
     target="_blank"
 
