@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Honey from "../assets/honey-1.png";
 import dharmendra from "../assets/dharmendra.png";
 import devesh from "../assets/devesh-photo.png";
-// import prabhat from "../assets/prabhat1.png";
-// import som from "../assets/som.png";
+import Unnati from "../assets/unnati.jpeg"; 
+import Ankit from "../assets/ankit.jpeg";   
 import rgh from "../assets/rgh.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -48,6 +48,16 @@ export default function Team() {
       name: "Dharmendra Makwana",
       role: "Lead Designer",
       imageUrl: dharmendra,
+    },
+    {
+      name: "Unnati Khare",
+      role: "Core Team Member ",
+      imageUrl: Unnati,
+    },
+    {
+      name: "Ankit Soni",
+      role: "Core Team Member ",
+      imageUrl: Ankit,
     },
   ];
 
