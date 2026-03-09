@@ -8,6 +8,7 @@ import devesh from "../assets/devesh-photo.png";
 import Unnati from "../assets/unnati.jpeg"; 
 import Ankit from "../assets/ankit.jpeg";   
 import rgh from "../assets/rgh.png";
+import Sujal from "../assets/sujal.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,6 +59,11 @@ export default function Team() {
       name: "Ankit Soni",
       role: "Core Team Member ",
       imageUrl: Ankit,
+    },
+    {
+      name: "Sujal Sharma",
+      role: " Team Member ",
+      imageUrl: Sujal,
     },
   ];
 
