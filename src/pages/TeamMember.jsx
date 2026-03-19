@@ -60,11 +60,11 @@ export default function Team() {
       role: "Core Team Member ",
       imageUrl: Ankit,
     },
-    {
-      name: "Sujal Sharma",
-      role: " Team Member ",
-      imageUrl: Sujal,
-    },
+    // {
+    //   name: "Sujal Sharma",
+    //   role: " Team Member ",
+    //   imageUrl: Sujal,
+    // },
   ];
 
   const cardRefs = useRef([]);
